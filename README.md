@@ -24,8 +24,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/YGw3h7B"><a href="https://imgur.com/gallery/YGw3h7B">Tippy Walkthrough</a></blockquote><script async 
-GIF created with [Kap](https://getkap.co/).
+![](https://github.com/jdimonte/Tippy/blob/main/Tippy/Kapture%202021-06-22%20at%2020.58.04.gif)
 
 ## Notes
 
