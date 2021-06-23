@@ -4,7 +4,7 @@ Tip Calculator App is a tip calculator application for iOS.
 
 Submitted by: Jacqueline DiMonte
 
-Time spent: 5 hours spent in total
+Time spent: 6.5 hours spent in total
 
 ## User Stories
 
@@ -14,8 +14,8 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
+* [ ] Settings page to change the default tip percentage.
 * [ ] UI animations
-* [ ] Custom Percentage Option
 
 The following **additional** features are implemented:
 
@@ -29,7 +29,7 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Challenges
+One challenge I ran into was connecting information from one page to the other. For example, implementing the custom tip percent, because it used information from the Settings Page. Also, implementing the Tip to Percent feature, because it used information from the Tips Page.
 
 ## Credits
 
@@ -37,7 +37,7 @@ Challenges
 
 ## License
 
-    Copyright [2021] [Jacqueline DiMonte]
+    Copyright 2021 Jacqueline DiMonte
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

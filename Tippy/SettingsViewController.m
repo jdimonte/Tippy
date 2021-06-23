@@ -9,6 +9,8 @@
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *customPercentage;
+@property (weak, nonatomic) IBOutlet UITextField *tipAmount;
+@property (weak, nonatomic) IBOutlet UILabel *percentAmount;
 
 @end
 
@@ -32,10 +34,20 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setDouble:customPercentage forKey:@"default_tip_percentage"];
     [defaults synchronize];
-    //load value
-    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
+}
+- (IBAction)tipAmountChanged:(id)sender {
+    double tip = [self.percentAmount.text doubleValue];
     
-    NSLog([NSString stringWithFormat:@"$%.2f", doubleValue]);
+    //load bill
+    NSUserDefaults *defaults2 = [NSUserDefaults standardUserDefaults];
+    double bill = [defaults2 doubleForKey:@"default_tip_percentage"];
+    
+    double percent = (tip / bill) * 100;
+    self.percentAmount.text = [NSString stringWithFormat:@"$%.2f", percent];
+    
+    NSLog(@"bill");
+    NSLog(@"percent");
+
 }
 
 
