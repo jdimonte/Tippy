@@ -4,7 +4,7 @@ Tip Calculator App is a tip calculator application for iOS.
 
 Submitted by: Jacqueline DiMonte
 
-Time spent: 2.5 hours spent in total
+Time spent: 5 hours spent in total
 
 ## User Stories
 
@@ -15,8 +15,11 @@ The following **required** functionality is complete:
 The following **optional** features are implemented:
 
 * [ ] UI animations
+* [ ] Custom Percentage Option
 
 The following **additional** features are implemented:
+
+* [ ] Convert Amount to Percentage Feature
 
 ## Video Walkthrough
 
@@ -34,7 +37,7 @@ Challenges
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2021] [Jacqueline DiMonte]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
