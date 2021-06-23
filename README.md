@@ -24,7 +24,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![til](./Tippy/Kapture 2021-06-22 at 20.58.04.gif)
+![til](/Tippy/Kapture 2021-06-22 at 20.58.04.gif)
 
 GIF created with [Kap](https://getkap.co/).
 
