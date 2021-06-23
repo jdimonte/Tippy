@@ -47,12 +47,13 @@ bool isEmpty = FALSE;
     double tipPercentage = tipPercentages[self.tipPercentageControl.selectedSegmentIndex];
     
     //load value
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
     
-    if(doubleValue){
-        tipPercentage = doubleValue / 100;
-    }
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
+//    
+//    if(doubleValue){
+//        tipPercentage = doubleValue / 100;
+//    }
     
     double bill = [self.billAmountField.text doubleValue];
     
