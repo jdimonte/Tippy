@@ -6,6 +6,7 @@
 //
 
 #import "TipViewController.h"
+#import "SettingsViewController.h"
 
 @interface TipViewController ()
 
@@ -23,13 +24,12 @@ bool isEmpty = FALSE;
 // +: class methods -: instance methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+
 - (IBAction)onTap:(id)sender {
-    NSLog(@"hello");
-    
     [self.view endEditing:true];
 }
+
 - (IBAction)updateLabels:(id)sender {
     if(self.billAmountField.text.length == 0) {
         [self hideLabels];
@@ -42,19 +42,22 @@ bool isEmpty = FALSE;
         }
     }
     
-    
+    [self calculateTip];
+}
+
+- (void)calculateTip {
     double tipPercentages[] = {0.15, 0.2, 0.25};
     double tipPercentage = tipPercentages[self.tipPercentageControl.selectedSegmentIndex];
-    
-    //load value
-    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    double doubleValue = [defaults doubleForKey:@"default_tip_percentage"];
-//    
-//    if(doubleValue){
-//        tipPercentage = doubleValue / 100;
-//    }
-    
+    if(self.customPercentOn){
+        // NOTE: how can I avoid problems with NSNumber and double?
+        tipPercentage = [self.customPercent doubleValue];
+    }
+    if(self.customTipOn){
+        tipPercentage = [self.customTip doubleValue];
+    }
+    NSLog(@"%@", self.customTipOn);
+    NSLog(@"%@", self.customPercentOn);
+
     double bill = [self.billAmountField.text doubleValue];
     
     //save bill
@@ -111,6 +114,8 @@ bool isEmpty = FALSE;
     [super viewDidAppear:animated];
 
     NSLog(@"View did appear");
+    NSLog(@"%@", self.customPercent);
+    [self calculateTip];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -125,14 +130,11 @@ bool isEmpty = FALSE;
     NSLog(@"View did disappear");
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    SettingsViewController *settingsViewController = [segue destinationViewController];
+    settingsViewController.bill = (NSNumber *)self.billAmountField.text;
 }
-*/
 
 @end
