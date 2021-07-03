@@ -74,6 +74,28 @@
                                     <action selector="updateLabels:" destination="BYZ-38-t0r" eventType="editingChanged" id="SOe-CG-aDo"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Split the bill by 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxI-zN-HlM">
+                                <rect key="frame" x="22" y="651" width="372" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$57.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f8-0y-Qef">
+                                <rect key="frame" x="22" y="737" width="248" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
+                                <color key="textColor" red="0.2666666667" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jmp-QB-dOK">
+                                <rect key="frame" x="278" y="768" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.47843137250000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changePeopleCount:" destination="BYZ-38-t0r" eventType="valueChanged" id="57h-i8-HzS"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.69019607843137254" green="0.51764705882352935" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,8 +115,11 @@
                     <connections>
                         <outlet property="billAmountField" destination="DBi-bT-EBr" id="hZ4-oS-Wrs"/>
                         <outlet property="labelsContainerView" destination="09G-uR-Ivc" id="B1z-eF-RqT"/>
+                        <outlet property="numberOfPeople" destination="jmp-QB-dOK" id="dYW-dW-b9g"/>
+                        <outlet property="splitBill" destination="XxI-zN-HlM" id="8xX-B4-034"/>
                         <outlet property="tipLabel" destination="gr3-HK-Gpl" id="eHx-cV-nY2"/>
                         <outlet property="tipPercentageControl" destination="Qve-up-1hY" id="1ab-kn-UPz"/>
+                        <outlet property="totalBillSplit" destination="3f8-0y-Qef" id="zPr-G6-W5v"/>
                         <outlet property="totalLabel" destination="RtG-qS-Jmc" id="bJh-Qa-eJQ"/>
                     </connections>
                 </viewController>

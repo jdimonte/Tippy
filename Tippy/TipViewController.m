@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipPercentageControl;
 @property (weak, nonatomic) IBOutlet UIView *labelsContainerView;
+@property (strong, nonatomic) IBOutlet UIStepper *numberOfPeople;
+@property (strong, nonatomic) IBOutlet UILabel *splitBill;
+@property (strong, nonatomic) IBOutlet UILabel *totalBillSplit;
+@property double totalBill;
 
 @end
 
@@ -43,6 +47,7 @@ bool isEmpty = FALSE;
     }
     
     [self calculateTip];
+    [self updateSplittingBill];
 }
 
 - (void)calculateTip {
@@ -67,6 +72,7 @@ bool isEmpty = FALSE;
     
     double tip = bill * tipPercentage;
     double total = bill + tip;
+    self.totalBill = total;
     
     self.tipLabel.text = [NSString stringWithFormat:@"$%.2f", tip];
     self.totalLabel.text = [NSString stringWithFormat:@"$%.2f", total];
@@ -102,6 +108,22 @@ bool isEmpty = FALSE;
         
         self.labelsContainerView.alpha = 1;
     }];
+}
+- (IBAction)changePeopleCount:(id)sender {
+    if(self.numberOfPeople.value <=1){
+        self.numberOfPeople.value = 2;
+    }
+    //update labels
+    NSString *first = @"Split the bill by ";
+    NSString *second = [NSString stringWithFormat:@"%.f", self.numberOfPeople.value];
+    self.splitBill.text = [first stringByAppendingString:second];
+    NSLog(@"%f", self.numberOfPeople.value);
+    [self updateSplittingBill];
+}
+
+- (void) updateSplittingBill {
+    double splittingBill = self.totalBill/self.numberOfPeople.value;
+    self.totalBillSplit.text = [NSString stringWithFormat:@"$%.2f", splittingBill];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
